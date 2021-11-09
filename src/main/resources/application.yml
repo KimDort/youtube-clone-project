@@ -1,0 +1,6 @@
+server:
+  servlet:
+    register-default-servlet: true
+    
+logging:  level:
+    root: debug
