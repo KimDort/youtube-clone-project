@@ -17,6 +17,11 @@ spring:
       url: jdbc:postgresql://127.0.0.1:25432/sampledb
       username: postgres
       password:
+    mariadb:
+      driver-class-name: org.postgresql.Driver
+      url: jdbc:postgresql://127.0.0.1:3306/sample
+      username: root
+      password: 1q2w3e4r
 #Default Profiles   config:    activate:      on-profile:       local    use-legacy-processing: true 
 #------------------
 #Dev Config
@@ -24,7 +29,7 @@ spring:
 ---
 logging:
   level:
-    root: info
+    root: debug
 spring: 
   config:
     activate:
