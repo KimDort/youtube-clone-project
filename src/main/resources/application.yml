@@ -4,16 +4,20 @@
 server:
   servlet:
     register-default-servlet: true
-    
+
+#Default Logging    
 logging:  level:
     root: debug
+    
+#Default DataSources
 spring:
   datasource:
     postgresql:
       driver-class-name: org.postgresql.Driver
       url: jdbc:postgresql://127.0.0.1:25432/sampledb
       username: postgres
-      password:   config:    activate:      on-profile:       local    use-legacy-processing: true 
+      password:
+#Default Profiles   config:    activate:      on-profile:       local    use-legacy-processing: true 
 #------------------
 #Dev Config
 #------------------
