@@ -19,10 +19,15 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	
 	//Postgresql connect
+	implementation 'org.postgresql:postgresql'
+	//Spring boot jdbc
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
 	implementation 'org.springframework.data:spring-data-jdbc'
-	implementation 'org.postgresql:postgresql'
+	//mybatis
+	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.0'
+	//Mariadb
+	runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
 }
 
 test {

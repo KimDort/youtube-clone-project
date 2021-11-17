@@ -1,35 +1,37 @@
+#------------------#Active Profile#------------------spring:  profiles:    active:    - local
+---#------------------#Active Group#------------------spring:  profiles:    group:      "dev": "local"---
 #------------------
-#Base Config
+#Local Config
 #------------------
 server:
   servlet:
     register-default-servlet: true
-
-#Default Logging    
+#Local Logging    
 logging:  level:
     root: debug
     
-#Default DataSources
-spring:
-  datasource:
+#Local DataSources
+spring:  datasource:
     postgresql:
       driver-class-name: org.postgresql.Driver
       url: jdbc:postgresql://127.0.0.1:25432/sampledb
       username: postgres
       password:
+      mapper-locations: classpath:/mapper/**/*.xml
     mariadb:
-      driver-class-name: org.postgresql.Driver
-      url: jdbc:postgresql://127.0.0.1:3306/sample
-      username: root
+      driver-class-name: org.mariadb.jdbc.Driver
+      url: jdbc:mariadb://127.0.0.1:23306/sample
+      username: tester
       password: 1q2w3e4r
-#Default Profiles   config:    activate:      on-profile:       local    use-legacy-processing: true 
+      mapper-locations: classpath:/mapper/**/*.xml
+#Local Profiles   config:    activate:      on-profile:       local
+---
 #------------------
 #Dev Config
 #------------------
----
 logging:
   level:
-    root: debug
+    root: info
 spring: 
   config:
     activate:
