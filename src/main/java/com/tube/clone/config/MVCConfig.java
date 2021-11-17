@@ -15,9 +15,12 @@ public class MVCConfig implements WebMvcConfigurer{
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		//Swagger
 		registry.addResourceHandler("swagger-ui.html")
-		.addResourceLocations("classpath:/META-INF/resources/");
+			.addResourceLocations("classpath:/META-INF/resources/");
 		registry.addResourceHandler("/webjars/**")
-		.addResourceLocations("classpath:/META-INF/resources/webjars/");
+			.addResourceLocations("classpath:/META-INF/resources/webjars/");
+		//Resource
+		registry.addResourceHandler("/**")
+			.addResourceLocations("classpath:/templates/", "classpath:/static/");
 	}
 
 	
@@ -26,8 +29,7 @@ public class MVCConfig implements WebMvcConfigurer{
 	public void addCorsMappings(CorsRegistry registry) {
 		registry.addMapping("/**")
 			.allowedOrigins("*")
-			.allowedMethods("GET", "POST", "PUT", "DELETE")
-			;
+			.allowedMethods("GET", "POST", "PUT", "DELETE");
 	}
 
 
