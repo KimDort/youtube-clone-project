@@ -26,7 +26,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 import com.zaxxer.hikari.HikariDataSource;
 
 @Configuration
-@EnableJpaRepositories(basePackages = "com.tube.clone", entityManagerFactoryRef = "mariadbEntityManagerFactory", transactionManagerRef = "mariadbTransactionManager")
+@EnableJpaRepositories(basePackages = "com.tube.clone.config.datasources", entityManagerFactoryRef = "mariadbEntityManagerFactory", transactionManagerRef = "mariadbTransactionManager")
 public class MariaDBDataSourceConfig {
 	
 	@Bean(name = "mariadbDataSourceProperties")
@@ -50,7 +50,7 @@ public class MariaDBDataSourceConfig {
 	public SqlSessionFactory mariadbSqlSessionFactory(@Qualifier("mariadbDataSource") DataSource mariadbDataSource, ApplicationContext applicationContext) throws Throwable {
 		SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
 		sessionFactory.setDataSource(mariadbDataSource);
-		sessionFactory.setMapperLocations(applicationContext.getResources("classpath:mapper/**/*.xml"));
+		sessionFactory.setMapperLocations(applicationContext.getResources("classpath:mappers/mariadb/**/*.xml"));
 		
 		return sessionFactory.getObject();
 	}
@@ -79,7 +79,7 @@ public class MariaDBDataSourceConfig {
 		properties.put("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
 		
 		em.setDataSource(dataSource);
-		em.setPackagesToScan("com.tube.clone");
+		em.setPackagesToScan("com.tube.clone.config.datasources");
 		em.setJpaVendorAdapter(jpaAdapter);
 		em.setJpaPropertyMap(properties);
 		em.afterPropertiesSet();
