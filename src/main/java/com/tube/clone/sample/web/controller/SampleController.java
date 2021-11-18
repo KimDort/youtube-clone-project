@@ -1,5 +1,6 @@
 package com.tube.clone.sample.web.controller;
 
+import java.util.Locale;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,7 @@ public class SampleController {
 	private SampleService service;
 	
 	@RequestMapping("/getSample")
-	public Map<String, Object> getSample(@RequestBody Map<String, Object> param){
-		return service.getSample(param);
+	public Map<String, Object> getSample(@RequestBody Map<String, Object> param, Locale locale){
+		return service.getSample(param, locale);
 	}
 }

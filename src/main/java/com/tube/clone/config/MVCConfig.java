@@ -22,8 +22,6 @@ public class MVCConfig implements WebMvcConfigurer{
 		registry.addResourceHandler("/**")
 			.addResourceLocations("classpath:/templates/", "classpath:/static/");
 	}
-
-	
 	
 	@Override
 	public void addCorsMappings(CorsRegistry registry) {
@@ -31,8 +29,6 @@ public class MVCConfig implements WebMvcConfigurer{
 			.allowedOrigins("*")
 			.allowedMethods("GET", "POST", "PUT", "DELETE");
 	}
-
-
 
 	@Override
 	public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
