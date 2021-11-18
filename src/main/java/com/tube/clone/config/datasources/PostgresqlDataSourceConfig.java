@@ -56,28 +56,6 @@ public class PostgresqlDataSourceConfig {
 	}
 	
 	/**
-	 * MyBatis Session Factory
-	 * */
-	@Primary
-	@Bean(name = "postgresqlSqlSessionFactory")
-	public SqlSessionFactory postgresqlSqlSessionFactory(@Qualifier("postgresqlDataSource") DataSource postgresqlDataSource, ApplicationContext applicationContext) throws Throwable {
-		SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
-		sessionFactory.setDataSource(postgresqlDataSource);
-		sessionFactory.setMapperLocations(applicationContext.getResources("classpath:mappers/postgres/**/*.xml"));
-		
-		return sessionFactory.getObject();
-	}
-	
-	/**
-	 * MyBatis Session Template
-	 * */
-	@Primary
-	@Bean(name = "postgresqlSqlSessionTemplate")
-	public SqlSessionTemplate postgresqlSqlSessionTemplate(@Qualifier("postgresqlSqlSessionFactory") SqlSessionFactory sessionFacotry) {
-		return new SqlSessionTemplate(sessionFacotry);
-	}
-	
-	/**
 	 * JPA ¿¬µ¿
 	 * */
 	@Primary
