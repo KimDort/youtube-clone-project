@@ -5,10 +5,9 @@
 #------------------
 server:
   servlet:
-    register-default-servlet: true
+    register-default-servlet: true  port: 9090
 #Local Logging    
-logging:  level:
-    root: debug
+logging:  pattern:    console: "[%d{HH:mm:ss:SSS}][%-5level][%logger.%method:line%line] - %msg%n"  level:    org:      springframework: DEBUG
     
 #Local DataSources
 spring:  jpa:    generate-ddl: true    show-sql: true  datasource:    postgresql:
@@ -28,9 +27,6 @@ spring:  jpa:    generate-ddl: true    show-sql: true  datasource:    postg
 #------------------
 #Dev Config
 #------------------
-logging:
-  level:
-    root: info
 spring: 
   config:
     activate:

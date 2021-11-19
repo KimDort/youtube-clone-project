@@ -16,7 +16,7 @@ public class SampleController {
 	@Autowired
 	private SampleService service;
 	
-	@RequestMapping("/getSample")
+	@RequestMapping("/sample/getSample")
 	public Map<String, Object> getSample(@RequestBody Map<String, Object> param, Locale locale){
 		return service.getSample(param, locale);
 	}
