@@ -2,8 +2,8 @@
 
 # 2021-11-17 Base Setting Create
 
-## 1. Youtube Media Streaming Service ±¸Çö
-### 1-1. Message Server(¿¹: Kafka)·Î Request, Response Ã³¸® °ËÅä
-## 2. ±¸µ¶ ¼­ºñ½º ±¸Çö
-## 3. K8S ÀÎÇÁ¶ó ±¸¼º
-## 4. K8S ÀÎÇÁ¶ó¿¡ Application ±¸¼º
+## 1. Youtube Media Streaming Service êµ¬í˜„
+### 1-1. Message Server(ì˜ˆ: Kafka)ë¡œ Request, Response ì²˜ë¦¬ ê²€í† 
+## 2. êµ¬ë… ì„œë¹„ìŠ¤ êµ¬í˜„
+## 3. K8S ì¸í”„ë¼ êµ¬ì„±
+## 4. K8S ì¸í”„ë¼ì— Application êµ¬ì„±
